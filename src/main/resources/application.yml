@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: os_swe_mtg
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+os-swe:
+  websocket:
+    allowed-origins: ${OS_SWE_ALLOWED_ORIGINS:http://localhost:8080,http://127.0.0.1:8080}
+
+server:
+  shutdown: graceful
